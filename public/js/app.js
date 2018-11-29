@@ -50525,7 +50525,7 @@ var render = function() {
                 "tr",
                 { key: indexX },
                 [
-                  indexX == 0 && _vm.weekdayForFirstDate > 1
+                  indexX == 0 && _vm.weekdayForFirstDate >= 1
                     ? _c(
                         "td",
                         { attrs: { colspan: _vm.weekdayForFirstDate } },

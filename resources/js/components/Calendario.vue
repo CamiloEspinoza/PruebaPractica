@@ -25,7 +25,7 @@
         <tbody>
             <template v-if="weeks.length > 0">
                 <tr v-for="(week, indexX) in weeks" :key="indexX">
-                    <td v-if="indexX == 0 && weekdayForFirstDate > 1" :colspan="weekdayForFirstDate">&nbsp;</td>
+                    <td v-if="indexX == 0 && weekdayForFirstDate >= 1" :colspan="weekdayForFirstDate">&nbsp;</td>
 
                     <td v-for="(date, indexY) in week" :key="indexY">
                         <a href="#" @click.prevent="selectDate(date)">
