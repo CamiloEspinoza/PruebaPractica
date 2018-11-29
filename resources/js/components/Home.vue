@@ -13,6 +13,7 @@
                     </li>
                 </ul>
                 <button @click.prevent="store()" :disabled="fechasSeleccionadas.length == 0">Guardar</button>
+                <button @click.prevent="clear()" :disabled="fechasSeleccionadas.length == 0">Limpiar</button>
             </div>
         </div>
     </div>
@@ -50,6 +51,9 @@ export default {
                 .then((rs) => {
                     alert("Fechas guardada en el archivo " + rs.data.file);
                 });
+        },
+        clear(){
+            this.fechasSeleccionadas = [];   
         }
     },
 }

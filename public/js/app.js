@@ -49933,6 +49933,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -49968,6 +49969,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.post('/api/store', { dates: this.fechasSeleccionadas }).then(function (rs) {
                 alert("Fechas guardada en el archivo " + rs.data.file);
             });
+        },
+        clear: function clear() {
+            this.fechasSeleccionadas = [];
         }
     }
 });
@@ -50633,6 +50637,20 @@ var render = function() {
             }
           },
           [_vm._v("Guardar")]
+        ),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            attrs: { disabled: _vm.fechasSeleccionadas.length == 0 },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                _vm.clear()
+              }
+            }
+          },
+          [_vm._v("Limpiar")]
         )
       ])
     ])
