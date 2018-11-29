@@ -25,7 +25,7 @@
         <tbody>
             <template v-if="weeks.length > 0">
                 <tr v-for="(week, indexX) in weeks" :key="indexX">
-                    <td v-if="indexX == 0" :colspan="weekdayForFirstDate">&nbsp;</td>
+                    <td v-if="indexX == 0 && weekdayForFirstDate > 1" :colspan="weekdayForFirstDate">&nbsp;</td>
 
                     <td v-for="(date, indexY) in week" :key="indexY">
                         <a href="#" @click.prevent="selectDate(date)">
@@ -63,6 +63,7 @@ export default {
                 .then(rs => {
                     that.selectedMonth = rs.data.month;
                     that.selectedYear = rs.data.year;
+                    that.weeks = [];
 
                     rs.data.dates.forEach((date) => {
                         if(!that.weeks[date.week - 1]){
@@ -76,10 +77,17 @@ export default {
                 });
         },
         selectDate(date){
-            EventBus.$emit('dateSelected', date);
+            EventBus.$emit('dateSelected', date.date);
         },
         getPrevMonth(){
-            
+            if(this.selectedMonth.number > 1){
+                this.selectedMonth.number--;
+            }else{
+                this.selectedMonth.number = 12;
+                this.selectedYear--;
+            }
+
+            this.getDias();
         },
         getNextMonth(){
             if(this.selectedMonth.number < 12){

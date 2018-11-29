@@ -6,11 +6,13 @@
                 <Calendario></Calendario>
             </div>
             <div class="col-list">
+                <p><b>Fechas Seleccionadas</b></p>
                 <ul>
                     <li v-for="(date, index) in fechasSeleccionadas" :key="index">
-                        {{ date.date }}
+                        {{ date }}
                     </li>
                 </ul>
+                <button @click.prevent="store()" :disabled="fechasSeleccionadas.length == 0">Guardar</button>
             </div>
         </div>
     </div>
@@ -33,8 +35,22 @@ export default {
     },
     methods: {
         agregarFecha(date) {
-            this.fechasSeleccionadas.push(date);
+            let rs = this.fechasSeleccionadas.filter((sdate) => {
+                return sdate == date;
+            });
+
+            if(rs.length == 0){
+                this.fechasSeleccionadas.push(date);
+            }
+
+            this.fechasSeleccionadas.sort();
         },
+        store(){
+            axios.post('/api/store', {dates: this.fechasSeleccionadas})
+                .then((rs) => {
+                    alert("Fechas guardada en el archivo " + rs.data.file);
+                });
+        }
     },
 }
 </script>
@@ -55,6 +71,6 @@ export default {
 }
 .col-list{
     width: 200px;
-    border: solid 1px red;
+    text-align: center;
 }
 </style>

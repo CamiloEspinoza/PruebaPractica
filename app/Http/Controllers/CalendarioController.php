@@ -35,4 +35,14 @@ class CalendarioController extends Controller
 
         return $dates;
     }
+
+    public function store()
+    {
+        $dates = request('dates', []);
+        $file = rand(1000, 9999) . '.json';
+
+        \Storage::put($file, json_encode($dates));
+
+        return ["file" => $file];
+    }
 }
