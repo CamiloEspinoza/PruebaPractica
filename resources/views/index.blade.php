@@ -6,17 +6,17 @@
 
 		<title>Prueba Práctica</title>
 
-		<link rel="stylesheet" href="/css/app.css?v0.0.1">
+		<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
 	</head>
 
 	<body>
 
 		<div id="app">
-	     <App />
+	     	<App> </App>
 		</div>
 
-		<script src="/js/app.js?v0.0.1" charset="utf-8"></script>
+		<script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
 
 	</body>
 </html>
