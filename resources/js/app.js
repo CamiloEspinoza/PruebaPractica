@@ -1,16 +1,17 @@
 require('./bootstrap')
 import Vue from 'vue'
 import VueRouter from 'vue-router';
-import Home from './components/Home.vue';
 
 //Componente Raiz
 Vue.component('App', require('./components/App.vue'))
+Vue.component('Calendario', require('./components/Calendario.vue'))
+
 Vue.use(VueRouter);
 
 const routes = [
     { 
         path: '/',
-        component: Home,
+        component: require('./components/Home.vue'),
         name: 'Home' 
     }
 ];
@@ -20,7 +21,6 @@ const router = new VueRouter({
     routes
 });
 
-// const app = new Vue().$mount('#app')
 const app = new Vue({
   el: '#app',
   router
