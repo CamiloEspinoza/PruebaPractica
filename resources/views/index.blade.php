@@ -13,7 +13,7 @@
 	<body>
 
 		<div id="app">
-	     <App />
+	     <App/>
 		</div>
 
 		<script src="/js/app.js?v0.0.1" charset="utf-8"></script>

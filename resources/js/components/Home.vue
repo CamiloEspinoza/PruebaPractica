@@ -11,7 +11,11 @@
 </template>
 
 <script>
+import Calendario from './Calendario';
+
 export default {
+  components: {Calendario}
+  ,
   data() {
     return {
       fechasSeleccionadas: [],
