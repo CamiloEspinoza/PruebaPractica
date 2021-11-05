@@ -8,6 +8,16 @@ use App\Models\Libro;
 class LibroController extends Controller
 {
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return Libro::all();
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  StoreLibroRequest  $request
