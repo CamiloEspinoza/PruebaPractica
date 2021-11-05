@@ -13,5 +13,20 @@ class Libro extends Model
      */
     protected $casts = [
         'ediciones_pasadas' => 'array',
+        'fecha_ingreso' => 'datetime:Y-m-d'
+    ];
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'nombre',
+        'descripcion',
+        'idioma',
+        'precio',
+        'estado',
+        'fecha_ingreso'
     ];
 }
