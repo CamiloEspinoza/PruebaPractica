@@ -24,7 +24,7 @@ class Dia extends Model
      * @var array
      */
     protected $casts = [
-        'fecha' => 'date',
+        'fecha' => 'date:Y-m-d',
         'estado' => 'boolean',
         'imagenes' => 'array',
     ];

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDiaRequest;
 use App\Models\Dia;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class DiaController extends Controller
@@ -13,7 +14,7 @@ class DiaController extends Controller
      *
      * @return Dia
      */
-    public function index(): Dia
+    public function index(): Collection
     {
         return Dia::when(request('inicio'), function ($query) {
             $query->where('fecha', '>=', request('inicio'));
