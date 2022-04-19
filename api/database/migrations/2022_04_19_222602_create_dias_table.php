@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('dias', function (Blueprint $table) {
             $table->id();
             $table->datetime('fecha');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->boolean('estado');
-            $table->json('imagenes');
+            $table->json('imagenes')->nullable();
             $table->timestamps();
         });
     }
