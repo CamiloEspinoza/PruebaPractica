@@ -31,4 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'nasa' => [
+        'base_url' => env('NASA_BASE_URL'),
+        'key' => env('NASA_API_KEY')
+    ]
 ];
