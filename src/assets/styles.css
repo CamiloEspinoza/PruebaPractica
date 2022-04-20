@@ -1,0 +1,59 @@
+body {
+  background-color: #eee;
+}
+
+.calendar {
+  margin: 0 auto;
+  max-width: 1030px;
+  height: 820px;
+  background: white;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.calendar-body {
+  margin-top: 20px;
+}
+
+.weeks {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+}
+
+.weeks .week {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #e0e0e0;
+}
+
+.events-wrapper .event-days {
+  display: flex;
+  border: 1px solid grey;
+  flex-wrap: wrap;
+}
+
+.events-wrapper .event-days .event-day {
+  width: 11.18%;
+  flex: 1 0 auto;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  text-align: center;
+  padding: 4px 10px;
+  position: relative;
+}
+
+.events-wrapper .event-days .event-day .event-day-number {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 9px;
+  font-weight: 500;
+}
