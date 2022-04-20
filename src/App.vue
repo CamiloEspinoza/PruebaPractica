@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-calendar :data="days"></v-calendar>
+    <v-calendar :data="data"></v-calendar>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: "App",
   data() {
     return {
-      days: [],
+      data: [],
     };
   },
   created() {
@@ -24,7 +24,7 @@ export default {
 
     const url = `http://127.0.0.1:8000/api/dias?start=${start.getFullYear()}-${month}-01&end=${end.getFullYear()}-${month}-${end.getDate()}`;
     axios.get(url).then((res) => {
-      this.days = res.data.result;
+      this.data = res.data.result;
     });
   },
   components: {
